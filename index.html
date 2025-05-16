@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Pierre-Papier-Ciseaux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle">Mode Sombre</button>
+    
+    <div class="game-container">
+        <h1>Pierre-Papier-Ciseaux</h1>
+        
+        <div class="score-board">
+            <div class="score-box">
+                <span class="score-label" id="player-label">Joueur</span>
+                <span class="score-value" id="player-score">0</span>
+            </div>
+            <div class="score-box">
+                <span class="score-label">Égalité</span>
+                <span class="score-value" id="tie-score">0</span>
+            </div>
+            <div class="score-box">
+                <span class="score-label">Ordinateur</span>
+                <span class="score-value" id="computer-score">0</span>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <div class="choices-container">
+                <h2>Faites votre choix:</h2>
+                <div class="choices">
+                    <button class="choice" id="rock">
+                        <div class="choice-icon">✊</div>
+                        <span>Pierre</span>
+                    </button>
+                    <button class="choice" id="paper">
+                        <div class="choice-icon">✋</div>
+                        <span>Papier</span>
+                    </button>
+                    <button class="choice" id="scissors">
+                        <div class="choice-icon">✌️</div>
+                        <span>Ciseaux</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <div class="selection">
+                    <div class="selection-box">
+                        <h3>Vous</h3>
+                        <div class="selection-icon" id="player-selection">?</div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="selection-box">
+                        <h3>Ordinateur</h3>
+                        <div class="selection-icon" id="computer-selection">?</div>
+                    </div>
+                </div>
+                <div class="result" id="result">Choisissez Pierre, Papier ou Ciseaux pour commencer</div>
+            </div>
+        </div>
+        
+        <div class="history-container">
+            <h2>Historique des tours</h2>
+            <ul class="history-list" id="history-list"></ul>
+        </div>
+        
+        <div class="buttons-container">
+            <button class="reset-btn" id="reset-btn">Nouvelle Partie</button>
+            <button class="name-btn" id="name-btn">Changer de Nom</button>
+        </div>
+    </div>
+    
+    <!-- Modal pour entrer le nom du joueur -->
+    <div id="name-modal" class="modal">
+        <div class="modal-content">
+            <h2>Entrez votre nom</h2>
+            <input type="text" id="player-name" placeholder="Votre nom">
+            <button id="save-name">Commencer</button>
+        </div>
+    </div>
+    
+    <!-- Sons -->
+    <audio id="sound-rock" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-retro-changing-tab-206.mp3" preload="auto"></audio>
+    <audio id="sound-paper" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-mechanical-bling-210.mp3" preload="auto"></audio>
+    <audio id="sound-scissors" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" preload="auto"></audio>
+    <audio id="sound-win" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+    <audio id="sound-lose" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-lose-2027.mp3" preload="auto"></audio>
+    <audio id="sound-tie" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
